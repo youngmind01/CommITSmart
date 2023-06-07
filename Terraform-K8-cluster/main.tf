@@ -14,9 +14,9 @@ module "gke" {
   horizontal_pod_autoscaling = true
   filestore_csi_driver       = true
 
-  ip_allocation_policy = {
-        cluster_secondary_range_name = "my-secondary-range"
-      }
+  # ip_allocation_policy = {
+  #       cluster_secondary_range_name = "my-secondary-range"
+  #     }
 
   node_pools = [
     {
