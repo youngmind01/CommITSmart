@@ -14,6 +14,10 @@ module "gke" {
   horizontal_pod_autoscaling = true
   filestore_csi_driver       = true
 
+  ip_allocation_policy = {
+        cluster_secondary_range_name = "my-secondary-range"
+      }
+
   node_pools = [
     {
       name                  = var.gke_default_nodepool_name
@@ -75,7 +79,7 @@ resource "google_compute_disk" "persistent_volume" {
   type  = var.disk_type
   size  = var.volume_size
 
-  zone  = var.gke_cluster_az[0]  # Use the first zone from the cluster's available zones
+  zone  = var.gke_cluster_az[0]  # first zone from the cluster's available zones
 
   labels = {
     environment = "dev"
