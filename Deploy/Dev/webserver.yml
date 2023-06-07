@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Nginx-deployment
+spec:
+  selector:
+    matchLabels:
+      app: Nginx
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: Nginx
+    spec:
+      containers:
+      - name: Nginx
+        image: mainline-alpine3.17-perl
+        resources:
+          limits:
+            memory: 128Mi
+            cpu: 500m
+        ports:
+        - containerPort: 80
+
