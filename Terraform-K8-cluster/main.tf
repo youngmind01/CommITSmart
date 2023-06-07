@@ -91,5 +91,5 @@ data "google_client_config" "default" {}
 resource "google_project_iam_member" "admin_role" {
   project = var.gcp_project_id
   role    = "roles/owner"
-  member  = "user:magen.techn@gmail.com"
+  member  = "user:<put your email here>"
 }
