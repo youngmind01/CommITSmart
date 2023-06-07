@@ -15,3 +15,5 @@
 5. The Network config file contains the necessary connection to enable accessibilty on the cluster
 
 6. resources vaules are hardcoded inside variable.auto.tfvars for future use
+
+7. Jenkins can be triggered using webhook

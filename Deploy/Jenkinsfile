@@ -9,9 +9,15 @@ pipeline {
 
   stages {
 
+    stage('Terraform script'){
+      steps{
+        sh './automate.sh'
+      }
+    }
+
     stage('Checkout Source') {
       steps {
-        git 'https://github.com/shazforiot/nodeapp_test.git'
+        git 'https://github.com/youngmind01/CommITSmart.git'
       }
     }
 
