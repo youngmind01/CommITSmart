@@ -1,4 +1,4 @@
-# GKE Cluster using Terraform
+# GKE Cluster using Terraform (All Terraform files are in Terraform-K8-cluster)
 
 1. Module: terraform-google-modules/kubernetes-engine/google
    Purpose: This module provisions a GKE cluster in Google Cloud Platform (GCP). It sets up the necessary infrastructure, including VPC network, subnetwork, cluster, node pools, and other configurations.
