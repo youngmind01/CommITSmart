@@ -4,8 +4,8 @@ module "gke" {
   name                       = var.gke_cluster_name
   region                     = var.gcp_region
   regional                   = var.gke_regional
-  zones                      = var.gke_cluster_az
-  network                    = var.gke_network
+  zones                      = var.gke_cluster_az[0]
+  network                    = google_compute_network.my_vpc_network.name
   subnetwork                 = var.gke_subnetwork_cidr
   ip_range_pods              = ""
   ip_range_services          = ""

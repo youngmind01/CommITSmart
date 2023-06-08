@@ -6,16 +6,15 @@ resource "google_compute_network" "my_vpc_network" {
 
 resource "google_compute_subnetwork" "my_subnetwork" {
   name          = "my-subnetwork"
-  network       = var.gke_network
+  network       = google_compute_network.my_vpc_network.name
   ip_cidr_range = var.gke_subnetwork_cidr
   region        = var.gcp_region
   private_ip_google_access = true
 }
 
-
 resource "google_compute_firewall" "gke_cluster_firewall" {
   name    = "gke-cluster-firewall"
-  network = var.gke_network
+  network = google_compute_network.my_vpc_network.name
 
   allow {
     protocol = "tcp"
